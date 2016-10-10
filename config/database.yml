@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 20
+  timeout: 3000
+  username: macbookpro
+  password:
+
+development:
+  <<: *default
+  database: barcode_development
+
+test:
+  <<: *default
+  database: barcode_test
+
+production:
+  <<: *default
+  database: barcode_production

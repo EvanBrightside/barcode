@@ -1,0 +1,26 @@
+<h1>Upload Form!</h1>
+
+<div>
+  <%= form_for @barcodexml do |f| %>
+
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+  <br>
+
+  <%= f.label :title %><br>
+  <%= f.text_field :title %>
+
+  <br>
+  <br>
+
+  <%= f.label :XML_File %><br>
+  <%= f.file_field :xml %>
+
+  <br>
+  <br>
+
+  <%= f.submit 'Загрузить' %>
+  <% end %>
+</div>
