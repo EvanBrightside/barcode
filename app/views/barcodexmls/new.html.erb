@@ -1,26 +1,31 @@
-<h1>Upload Form!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4" style="padding: 0px 3.8%;">
+      <h1 class="text-center">Upload Form!</h1>
 
-<div>
-  <%= form_for @barcodexml do |f| %>
-
-  <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
-
-  <br>
-
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-
-  <br>
-  <br>
-
-  <%= f.label :XML_File %><br>
-  <%= f.file_field :xml %>
-
-  <br>
-  <br>
-
-  <%= f.submit 'Загрузить' %>
-  <% end %>
+      <div>
+        <%= form_for @barcodexml do |f| %>
+          <% if flash[:notice] %>
+              <div class="notice"><%= flash[:notice] %></div>
+          <% end %>
+          <br>
+          <div class="control-group">
+            <%= f.label :title,  :class => 'control-label' %><br>
+            <div class="controls">
+              <%= f.text_field :title, class: 'form-control'  %>
+            </div>
+          </div>
+          <br>
+          <div class="control-group">
+            <%= f.label :XML_File, :class => 'control-label' %><br>
+            <div class="controls">
+              <%= f.file_field :xml, requred: true %>
+            </div>
+          </div>
+          <br>
+          <%= f.submit 'Загрузить', :class=> "btn btn-primary btn-block" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
