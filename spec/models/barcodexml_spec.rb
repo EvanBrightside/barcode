@@ -9,5 +9,11 @@ RSpec.describe Barcodexml do
       inn = doc.xpath('ns:Range').attr('Inn').text
       expect(inn).to eq('290123790224')
     end
+
+    subject { Barcodexml.create(xml: Rails.root + 'spec/assets/123.xml') }
+
+    it 'create' do
+      expect(subject.zipcode).to eq(190805)
+    end
   end
 end
