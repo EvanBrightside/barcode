@@ -18,17 +18,13 @@ ActiveRecord::Schema.define(version: 20161009211038) do
 
   create_table "barcodexmls", force: :cascade do |t|
     t.string   "title"
-    t.integer  "inn",              limit: 8
+    t.integer  "inn",        limit: 8
     t.integer  "zipcode"
     t.integer  "month"
     t.integer  "start"
     t.integer  "end"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.string   "xml_file_name"
-    t.string   "xml_content_type"
-    t.integer  "xml_file_size"
-    t.datetime "xml_updated_at"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
 end

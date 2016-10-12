@@ -1,10 +1,9 @@
 class Barcodexml < ActiveRecord::Base
-  has_attached_file :xml
+  attr_accessor :xml
   before_save :parse_file
 
   def parse_file
-    tempfile = xml.queued_for_write[:original]
-    doc = Nokogiri::XML(tempfile)
+    doc = Nokogiri::XML(xml.read)
     parse_xml(doc)
   end
 
