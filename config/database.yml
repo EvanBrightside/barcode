@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   pool: 20
   timeout: 3000
-  username: macbookpro
+  username:
   password:
 
 development:
